@@ -6,7 +6,7 @@ A data analytics and visualization project demonstrating end-to-end data science
 
 
 
-\## 📊 Project Overview
+\## Project Overview
 
 
 
@@ -28,7 +28,7 @@ This project analyzes historical flu trends and creates visualizations to help u
 
 
 
-\## 🗂️ Project Structure
+\## Project Structure
 
 
 
@@ -58,7 +58,7 @@ flu-forecast-hub/
 
 
 
-\## 🚀 Getting Started
+\##  Getting Started
 
 
 
@@ -100,7 +100,7 @@ pip install -r requirements.txt
 
 
 
-\## 📈 Data Sources
+\##  Data Sources
 
 
 
@@ -124,7 +124,7 @@ pytest backend/tests/ -v
 
 
 
-\## 📊 Visualizations
+\## Visualizations
 
 
 
@@ -132,7 +132,7 @@ pytest backend/tests/ -v
 
 
 
-\## 📝 Project Phases
+\## Project Phases
 
 
 
@@ -152,13 +152,29 @@ pytest backend/tests/ -v
 
 
 
-\## 👤 Author
+\## Author
 
 
 
 Anita Janie Christdoss Chelladurai
 
+\## Tableau Dashboard
 
+
+
+\*\*\[View Interactive Dashboard](https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard)\*\*
+
+
+
+Features:
+
+\- ILI Trend Analysis
+
+\- Seasonal Heatmap
+
+\- Year-over-Year Comparison
+
+\- Severity Distribution
 
 \## 📄 License
 
