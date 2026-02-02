@@ -2,22 +2,16 @@
 Unit Tests for Data Fetcher Module
 ----------------------------------
 Tests data fetching, validation, and cleaning logic.
-
-Learning Points:
-- Writing testable code
-- Mocking external dependencies
-- Testing edge cases
 """
 
 import pytest
 import pandas as pd
 import numpy as np
-from unittest.mock import patch, MagicMock
-
-# Import will work once you set up the project
-# For now, this shows the test structure
 import sys
-sys.path.insert(0, 'backend/app')
+import os
+
+# Add the app directory to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'app'))
 
 from data_fetcher import CDCDataFetcher, fetch_sample_data
 
@@ -64,7 +58,7 @@ class TestCDCDataFetcher:
         df = pd.DataFrame({
             'year': [2023, 2023],
             'week': [1, 2],
-            'ili_percentage': [3.5, -1.0]  # -1 is invalid
+            'ili_percentage': [3.5, -1.0]
         })
         
         cleaned = fetcher._validate_and_clean(df)
@@ -78,7 +72,7 @@ class TestCDCDataFetcher:
         df = pd.DataFrame({
             'year': [2023, 2023],
             'week': [1, 2],
-            'ili_percentage': [3.5, 150.0]  # 150% is invalid
+            'ili_percentage': [3.5, 150.0]
         })
         
         cleaned = fetcher._validate_and_clean(df)
@@ -90,7 +84,7 @@ class TestCDCDataFetcher:
         """Week number must be 1-53."""
         df = pd.DataFrame({
             'year': [2023, 2023, 2023],
-            'week': [1, 54, 0],  # 54 and 0 are invalid
+            'week': [1, 54, 0],
             'ili_percentage': [3.5, 4.0, 3.0]
         })
         
@@ -105,7 +99,6 @@ class TestCDCDataFetcher:
         df = pd.DataFrame({
             'year': [2023],
             'week': [1]
-            # Missing 'ili_percentage'
         })
         
         with pytest.raises(ValueError, match="Missing required column"):
@@ -161,25 +154,10 @@ class TestFetchSampleData:
         """Winter weeks should have higher ILI on average."""
         df = fetch_sample_data()
         
-        # Winter: weeks 1-10 and 40-52
         winter = df[(df['week'] <= 10) | (df['week'] >= 40)]
         summer = df[(df['week'] > 10) & (df['week'] < 40)]
         
         assert winter['ili_percentage'].mean() > summer['ili_percentage'].mean()
-
-
-# ===== Integration Test Example =====
-
-@pytest.mark.integration
-@pytest.mark.skip(reason="Requires network access to CDC")
-def test_actual_cdc_api_connection():
-    """
-    Test actual connection to CDC API.
-    Skip by default to avoid network dependency in CI.
-    """
-    fetcher = CDCDataFetcher()
-    # This would test the real API
-    pass
 
 
 if __name__ == "__main__":
