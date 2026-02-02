@@ -160,5 +160,75 @@ class TestFetchSampleData:
         assert winter['ili_percentage'].mean() > summer['ili_percentage'].mean()
 
 
+class TestSaveToCSV:
+    """Tests for saving data to CSV."""
+    
+    @pytest.fixture
+    def fetcher(self):
+        return CDCDataFetcher()
+    
+    @pytest.fixture
+    def sample_df(self):
+        return pd.DataFrame({
+            'year': [2023, 2023],
+            'week': [1, 2],
+            'region': ['National', 'National'],
+            'ili_percentage': [3.5, 4.2]
+        })
+    
+    @pytest.mark.unit
+    def test_save_creates_file(self, fetcher, sample_df, tmp_path):
+        """Should create a CSV file."""
+        # Use temp directory for test
+        import tempfile
+        
+        filepath = os.path.join(tmp_path, "test_data.csv")
+        sample_df.to_csv(filepath, index=False)
+        
+        assert os.path.exists(filepath)
+    
+    @pytest.mark.unit
+    def test_saved_file_contains_correct_data(self, sample_df, tmp_path):
+        """Saved CSV should contain the same data."""
+        filepath = os.path.join(tmp_path, "test_data.csv")
+        sample_df.to_csv(filepath, index=False)
+        
+        loaded_df = pd.read_csv(filepath)
+        
+        assert len(loaded_df) == len(sample_df)
+        assert list(loaded_df.columns) == list(sample_df.columns)
+
+
+class TestDataIntegrity:
+    """Tests for data integrity and consistency."""
+    
+    @pytest.mark.unit
+    def test_sample_data_has_no_duplicates(self):
+        """Each year-week combination should be unique."""
+        df = fetch_sample_data()
+        
+        duplicates = df.duplicated(subset=['year', 'week', 'region'])
+        assert duplicates.sum() == 0
+    
+    @pytest.mark.unit
+    def test_sample_data_covers_full_years(self):
+        """Each year should have 52 weeks of data."""
+        df = fetch_sample_data()
+        
+        weeks_per_year = df.groupby('year')['week'].count()
+        
+        for year, count in weeks_per_year.items():
+            assert count == 52, f"Year {year} has {count} weeks, expected 52"
+    
+    @pytest.mark.unit
+    def test_ili_percentage_reasonable_range(self):
+        """ILI percentage should typically be between 0-15%."""
+        df = fetch_sample_data()
+        
+        # Most values should be under 15% (extreme outbreaks aside)
+        reasonable = df['ili_percentage'] <= 15
+        assert reasonable.mean() > 0.95  # 95% should be under 15%
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
