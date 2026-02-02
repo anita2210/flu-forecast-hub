@@ -162,7 +162,7 @@ Anita Janie Christdoss Chelladurai
 
 
 
-\*\*\[View Interactive Dashboard](https://public.tableau.com/app/profile/anita.janie.christdoss.chelladurai/viz/FluForecastHubDashboard/FluDashboard)\*\*
+\*\*\[View Interactive Dashboard](https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard?:language=en-US\&:sid=\&:redirect=auth\&publish=yes\&showOnboarding=true\&:display\_count=n\&:origin=viz\_share\_link)\*\*
 
 
 
