@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Data files (keep structure, ignore large files)
+data/raw/*.csv
+data/raw/*.json
+data/processed/*.csv
+data/processed/*.parquet
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model files
+*.pkl
+*.joblib
+*.h5
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# API keys and secrets
+.env
+.env.local
+config/secrets.yaml
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
