@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}About - Flu Forecast Hub{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4"><i class="fas fa-info-circle"></i> About This Project</h1>
+    
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <!-- Project Overview -->
+            <div class="card p-4 mb-4">
+                <h3><i class="fas fa-project-diagram"></i> Project Overview</h3>
+                <p>Flu Forecast Hub is a comprehensive data analytics project that demonstrates end-to-end data science skills including data collection, analysis, machine learning, visualization, and web development.</p>
+            </div>
+
+            <!-- Technologies -->
+            <div class="card p-4 mb-4">
+                <h3><i class="fas fa-tools"></i> Technologies Used</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Backend</h5>
+                        <ul>
+                            <li>Python 3.11</li>
+                            <li>Flask (Web Framework)</li>
+                            <li>Pandas & NumPy</li>
+                            <li>Statsmodels (ARIMA)</li>
+                            <li>Scikit-learn</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Frontend & Tools</h5>
+                        <ul>
+                            <li>HTML5 & CSS3</li>
+                            <li>Bootstrap 5</li>
+                            <li>Tableau Public</li>
+                            <li>GitHub Actions (CI/CD)</li>
+                            <li>Pytest (32 tests)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="card p-4 mb-4">
+                <h3><i class="fas fa-star"></i> Key Features</h3>
+                <ul>
+                    <li><strong>Data Pipeline:</strong> Automated data collection from CDC FluView API</li>
+                    <li><strong>Data Validation:</strong> Comprehensive data cleaning and validation</li>
+                    <li><strong>Forecasting:</strong> ARIMA model for time-series predictions</li>
+                    <li><strong>Visualization:</strong> Interactive Tableau dashboard with 5 charts</li>
+                    <li><strong>Testing:</strong> 32 unit tests with CI/CD pipeline</li>
+                    <li><strong>API:</strong> RESTful endpoints for data access</li>
+                </ul>
+            </div>
+
+            <!-- API Endpoints -->
+            <div class="card p-4 mb-4">
+                <h3><i class="fas fa-code"></i> API Endpoints</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Endpoint</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/api/data</code></td>
+                            <td>Get recent flu data records</td>
+                        </tr>
+                        <tr>
+                            <td><code>/api/forecast</code></td>
+                            <td>Get forecast predictions</td>
+                        </tr>
+                        <tr>
+                            <td><code>/api/stats</code></td>
+                            <td>Get data statistics</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Author -->
+            <div class="card p-4 mb-4">
+                <h3><i class="fas fa-user"></i> Author</h3>
+                <p><strong>Anita</strong></p>
+                <p>Data Analytics Portfolio Project - 2025</p>
+                <div class="mt-3">
+                    <a href="https://github.com/anita2210/flu-forecast-hub" class="btn btn-dark me-2">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard" class="btn btn-primary">
+                        <i class="fas fa-chart-bar"></i> Tableau
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

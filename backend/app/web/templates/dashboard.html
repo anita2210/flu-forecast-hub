@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Flu Forecast Hub{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <h1 class="text-center mb-4"><i class="fas fa-th-large"></i> Interactive Dashboard</h1>
+    <p class="text-center text-muted mb-4">Powered by Tableau Public</p>
+
+    <!-- Tableau Embed -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card p-3">
+                <div class='tableauPlaceholder' style='width: 100%; height: 800px;'>
+                    <object class='tableauViz' width='100%' height='800' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='FluForecastHubDashboard/FluDashboard' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                    </object>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alternative Link -->
+    <div class="text-center mt-4">
+        <p class="text-muted">Dashboard not loading?</p>
+        <a href="{{ tableau_url }}" target="_blank" class="btn btn-primary">
+            <i class="fas fa-external-link-alt"></i> Open in Tableau Public
+        </a>
+    </div>
+</div>
+
+<!-- Tableau JS -->
+<script type='text/javascript'>
+    var divElement = document.querySelector('.tableauPlaceholder');
+    var vizElement = divElement.querySelector('object');
+    vizElement.style.width = '100%';
+    vizElement.style.height = '800px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    divElement.appendChild(scriptElement);
+</script>
+{% endblock %}

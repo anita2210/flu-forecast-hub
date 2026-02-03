@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Flu Forecast Hub{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero">
+    <div class="container text-center">
+        <h1><i class="fas fa-virus"></i> Flu Forecast Hub</h1>
+        <p class="lead">Analyzing and predicting influenza trends using CDC surveillance data</p>
+        <a href="/forecast" class="btn btn-light btn-lg mt-3">
+            <i class="fas fa-chart-line"></i> View Forecast
+        </a>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="container">
+    <h2 class="text-center mb-4">📊 Data Overview</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card stat-card">
+                <div class="stat-number">{{ stats.total_records }}</div>
+                <div class="stat-label">Total Records</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card stat-card">
+                <div class="stat-number">{{ stats.years }}</div>
+                <div class="stat-label">Years Covered</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card stat-card">
+                <div class="stat-number">{{ stats.avg_ili }}%</div>
+                <div class="stat-label">Average ILI</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card stat-card">
+                <div class="stat-number text-danger">{{ stats.max_ili }}%</div>
+                <div class="stat-label">Peak ILI (Maximum)</div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card stat-card">
+                <div class="stat-number text-success">{{ stats.min_ili }}%</div>
+                <div class="stat-label">Lowest ILI (Minimum)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <h2 class="text-center mb-4 mt-5">🔬 Features</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 p-4">
+                <div class="text-center mb-3">
+                    <i class="fas fa-database fa-3x text-primary"></i>
+                </div>
+                <h5 class="text-center">Data Collection</h5>
+                <p class="text-muted">Automated collection of CDC flu surveillance data with validation and cleaning.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 p-4">
+                <div class="text-center mb-3">
+                    <i class="fas fa-brain fa-3x text-primary"></i>
+                </div>
+                <h5 class="text-center">ARIMA Forecasting</h5>
+                <p class="text-muted">Time-series forecasting using ARIMA model to predict future flu trends.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 p-4">
+                <div class="text-center mb-3">
+                    <i class="fas fa-chart-pie fa-3x text-primary"></i>
+                </div>
+                <h5 class="text-center">Interactive Dashboard</h5>
+                <p class="text-muted">Tableau dashboard with heatmaps, trends, and year comparisons.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-5 mb-5">
+        <a href="/dashboard" class="btn btn-primary btn-lg me-3">
+            <i class="fas fa-th-large"></i> View Dashboard
+        </a>
+        <a href="/api/data" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-code"></i> API Access
+        </a>
+    </div>
+</div>
+{% endblock %}
