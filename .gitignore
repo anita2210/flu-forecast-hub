@@ -14,10 +14,6 @@ env/
 *.swp
 
 # Data files (keep structure, ignore large files)
-data/raw/*.csv
-data/raw/*.json
-data/processed/*.csv
-data/processed/*.parquet
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
