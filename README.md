@@ -1,238 +1,148 @@
-\# 🦠 Flu Forecast Hub
+<div align="center">
+
+🦠 Flu Forecast Hub
+
+Predicting Influenza Trends with Data Science
+
+Show Image
+
+Show Image
+
+Show Image
 
 
 
-A comprehensive data analytics and visualization project demonstrating end-to-end data science workflow using CDC flu surveillance data.
+An end-to-end data analytics project that collects CDC flu data, builds forecasting models, and presents insights through interactive visualizations.
+
+</div>
 
 
 
-\## 🌐 Live Demo
+✨ What This Project Does
+
+I built this project to demonstrate the complete data science workflow:
 
 
 
-| Platform | Link |
+Collect → Fetch real flu surveillance data from CDC
 
-|----------|------|
+Clean → Validate and process the data
 
-| \*\*Website\*\* |(https://flu-forecast-hub.onrender.com) |
+Analyze → Explore patterns and seasonal trends
 
-| \*\*Tableau Dashboard\*\* | \[View Dashboard](https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard) |
+Predict → Forecast future flu activity using ARIMA
 
+Visualize → Create interactive Tableau dashboards
 
-
-\## 📊 Project Overview
-
-
-
-This project analyzes historical flu trends and creates visualizations to help understand seasonal patterns, regional variations, and predictive indicators.
+Deploy → Build and launch a web application
 
 
 
-\### Features
 
-\- 📈 \*\*Data Collection\*\*: Automated CDC flu data fetching and validation
 
-\- 🤖 \*\*ARIMA Forecasting\*\*: Time-series predictions for future flu trends
+🔗 Quick Links
 
-\- 📊 \*\*Interactive Dashboard\*\*: 5-chart Tableau dashboard with heatmaps and trends
-
-\- 🌐 \*\*Web Application\*\*: Flask-based interface with REST API
-
-\- ✅ \*\*32 Unit Tests\*\*: Comprehensive test coverage with CI/CD
+🌐 Live Website📊 Tableau Dashboard
 
 
 
-\## 🛠️ Technologies Used
+🛠️ Built With
+
+Data \& ML: Python · Pandas · NumPy · Statsmodels · Scikit-learn
+
+Visualization: Tableau · Matplotlib · Seaborn
+
+Web: Flask · HTML · CSS · Bootstrap
+
+DevOps: GitHub Actions · Pytest · Render
 
 
 
-| Category | Technologies |
+📁 Project Structure
 
-|----------|-------------|
+📦 flu-forecast-hub
 
-| \*\*Backend\*\* | Python, Flask, Pandas, NumPy |
+├── 🐍 backend/app/
 
-| \*\*ML/Stats\*\* | Statsmodels (ARIMA), Scikit-learn |
+│   ├── data\_fetcher.py     → Fetches CDC data
 
-| \*\*Visualization\*\* | Tableau, Matplotlib, Seaborn |
+│   ├── forecaster.py       → ARIMA predictions
 
-| \*\*Frontend\*\* | HTML5, CSS3, Bootstrap 5 |
+│   └── web/templates/      → HTML pages
 
-| \*\*Testing\*\* | Pytest (32 tests) |
-
-| \*\*CI/CD\*\* | GitHub Actions |
-
-| \*\*Deployment\*\* | Render |
-
-
-
-\## 🗂️ Project Structure
-
-
-
-```
-
-flu-forecast-hub/
-
-├── backend/
-
-│   ├── app/
-
-│   │   ├── data\_fetcher.py    # CDC data collection
-
-│   │   ├── forecaster.py      # ARIMA forecasting model
-
-│   │   └── web/               # Flask web application
-
-│   └── tests/                 # 32 unit tests
-
-├── notebooks/
+├── 📓 notebooks/
 
 │   ├── 01\_exploratory\_analysis.ipynb
 
 │   └── 02\_forecasting.ipynb
 
-├── tableau/                   # Tableau data exports
+├── 🧪 backend/tests/       → 32 unit tests
 
-├── scripts/                   # Utility scripts
-
-└── app.py                     # Deployment entry point
-
-```
+└── 🚀 app.py               → Deployment entry
 
 
 
-\## 🚀 Getting Started
+🚀 Run Locally
 
-
-
-\### Prerequisites
-
-\- Python 3.9+
-
-\- Tableau Public (free)
-
-
-
-\### Installation
-
-
-
-```bash
-
-\# Clone repository
+bash# Clone \& setup
 
 git clone https://github.com/anita2210/flu-forecast-hub.git
 
 cd flu-forecast-hub
 
-
-
-\# Create virtual environment
-
 python -m venv venv
 
-source venv/bin/activate  # On Windows: venv\\Scripts\\activate
-
-
-
-\# Install dependencies
+venv\\Scripts\\activate
 
 pip install -r requirements.txt
 
-```
 
 
-
-\### Run Locally
-
-
-
-```bash
-
-\# Run web application
+\# Run
 
 python scripts/run\_web.py
 
 
 
-\# Open browser: http://127.0.0.1:5000
-
-```
+\# Visit → http://127.0.0.1:5000
 
 
 
-\### Run Tests
+🔌 API Endpoints
+
+GET  /api/data      →  Recent flu records
+
+GET  /api/forecast  →  8-week predictions
+
+GET  /api/stats     →  Summary statistics
 
 
 
-```bash
+📊 Dashboard Highlights
 
-pytest backend/tests/ -v
-
-```
+ChartInsight📈 ILI TrendWeekly flu activity over 5 years🗓️ HeatmapSeasonal patterns by week \& year📉 Year ComparisonCompare flu seasons side-by-side📊 SeverityDistribution of flu intensity
 
 
 
-\## 📈 API Endpoints
+🧪 Testing
+
+✅ 32 tests covering data validation, forecasting, and API
+
+bashpytest backend/tests/ -v
 
 
 
-| Endpoint | Description |
+<div align="center">
 
-|----------|-------------|
+👩‍💻 Author
 
-| `/api/data` | Get recent flu data records |
+Anita
 
-| `/api/forecast` | Get forecast predictions |
+Made with ❤️ and lots of ☕
 
-| `/api/stats` | Get data statistics |
+⭐ Star this repo if you found it helpful!
 
-
-
-\## 📊 Dashboard Preview
-
-
-
-The Tableau dashboard includes:
-
-\- ILI Trend (Time Series)
-
-\- Seasonal Heatmap (Year vs Week)
-
-\- Year-over-Year Comparison
-
-\- Forecast Visualization
-
-\- Severity Distribution
-
-
-
-\## 🧪 Testing
-
-
-
-\- \*\*32 Unit Tests\*\* covering data fetching, validation, and forecasting
-
-\- \*\*CI/CD Pipeline\*\* with GitHub Actions
-
-\- Tests run automatically on every push
-
-
-
-\## 👤 Author
-
-
-
-\*\*Anita\*\*
-
-
-
-\- GitHub: \[@anita2210](https://github.com/anita2210)
-
-\- Project: \[flu-forecast-hub](https://github.com/anita2210/flu-forecast-hub)
-
-
+</div>
 
 
 
