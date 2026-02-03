@@ -14,7 +14,7 @@ A comprehensive data analytics and visualization project demonstrating end-to-en
 
 |----------|------|
 
-| \*\*Website\*\* | \[https://flu-forecast-hub.onrender.com](https://flu-forecast-hub.onrender.com) |
+| \*\*Website\*\* |(https://flu-forecast-hub.onrender.com) |
 
 | \*\*Tableau Dashboard\*\* | \[View Dashboard](https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard) |
 
