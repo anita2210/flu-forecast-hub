@@ -30,8 +30,11 @@ jobs:
         pytest backend/tests/ -v --tb=short
     
     - name: Run forecasting notebook
+      env:
+        PYTHONPATH: ${{ github.workspace }}/backend/app
       run: |
-        jupyter nbconvert --to notebook --execute notebooks/02_forecasting.ipynb --output executed_notebook.ipynb
+        cd notebooks
+        jupyter nbconvert --to notebook --execute 02_forecasting.ipynb --output executed_02.ipynb
     
     - name: Test Summary
       if: always()
