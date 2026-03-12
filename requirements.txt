@@ -21,6 +21,9 @@ prophet>=1.1.0
 pytest>=7.3.0
 pytest-cov>=4.0.0
 
+# Web Framework
+flask>=2.3.0
+
 # API (for later phases)
 fastapi>=0.95.0
 uvicorn>=0.21.0

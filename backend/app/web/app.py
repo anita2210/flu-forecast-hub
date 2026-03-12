@@ -64,7 +64,7 @@ def forecast():
 @app.route('/dashboard')
 def dashboard():
     """Embedded Tableau dashboard."""
-    tableau_url = "https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard"
+    tableau_url = "https://public.tableau.com/views/FluForecastHub/Overview?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
     return render_template('dashboard.html', tableau_url=tableau_url)
 
 

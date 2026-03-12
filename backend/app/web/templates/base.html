@@ -7,58 +7,198 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.9)),
+                        url('https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1920') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         .navbar {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .navbar-brand {
             font-weight: bold;
             font-size: 1.5rem;
+            color: #60a5fa !important;
         }
+
+        .nav-link {
+            color: #e2e8f0 !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #60a5fa !important;
+        }
+
         .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #f8fafc;
         }
+
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(96, 165, 250, 0.2);
         }
+
         .stat-card {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
         }
+
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            color: #2a5298;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .stat-label {
-            color: #6c757d;
-            font-size: 0.9rem;
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-top: 10px;
         }
+
         .hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 60px 0;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(124, 58, 237, 0.9)),
+                        url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1920') no-repeat center center;
+            background-size: cover;
+            padding: 80px 0;
+            margin-bottom: 40px;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .btn-glow {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+            color: white;
+        }
+
         .forecast-item {
-            padding: 15px;
-            margin: 10px 0;
-            background: #e3f2fd;
-            border-radius: 10px;
+            padding: 20px;
+            margin: 12px 0;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
+
+        .forecast-item:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(10px);
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+        }
+
         .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 30px 0;
-            margin-top: 50px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            color: #94a3b8;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #a78bfa;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .text-muted {
+            color: #94a3b8 !important;
+        }
+
+        h5, h3 {
+            color: #f8fafc;
+        }
+
+        .table {
+            color: #e2e8f0;
+        }
+
+        code {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        ul li {
+            color: #cbd5e1;
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -97,13 +237,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container text-center">
-            <p><i class="fas fa-virus"></i> Flu Forecast Hub - Data Analytics Portfolio Project</p>
+            <p class="mb-3"><i class="fas fa-virus"></i> Flu Forecast Hub - Data Analytics Portfolio Project</p>
             <p>
-                <a href="https://github.com/anita2210/flu-forecast-hub" class="text-white me-3">
-                    <i class="fab fa-github"></i> GitHub
+                <a href="https://github.com/anita2210/flu-forecast-hub" class="me-4">
+                    <i class="fab fa-github fa-lg"></i> GitHub
                 </a>
-                <a href="https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard" class="text-white">
-                    <i class="fas fa-chart-bar"></i> Tableau
+                <a href="https://public.tableau.com/views/FluForecastHub/Overview?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">
+                    <i class="fas fa-chart-bar fa-lg"></i> Tableau
                 </a>
             </p>
             <small>Built with Python, Flask, and ❤️</small>
