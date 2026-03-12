@@ -21,7 +21,7 @@ builds forecasting models, and presents insights through interactive visualizati
 
 | 🌐 Website | 📊 Tableau Dashboard |
 |:----------:|:--------------------:|
-| [flu-forecast-hub.onrender.com](https://flu-forecast-hub.onrender.com) | [View Dashboard](https://public.tableau.com/views/FluForecastHubDashboard/FluDashboard) |
+| [flu-forecast-hub.onrender.com](https://flu-forecast-hub.onrender.com) | [View Dashboard](https://public.tableau.com/views/FluForecastHub/Overview) |
 
 </div>
 
